@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RectanculoTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">RectanculoTest (29 abr 2026 19:11:53)</a> &gt; <a href="../../index.html" class="el_group">TareaTema9y10</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">ejercicio</a> &gt; <span class="el_source">RectanculoTest.java</span></div><h1>RectanculoTest.java</h1><pre class="source lang-java linenums">package ejercicio;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+<span class="fc" id="L7">class RectanculoTest {</span>
+
+	@Test
+	void test() {
+		 // --- CASO 1: valores positivos ---
+<span class="fc" id="L12">        Rectangulo r1 = new Rectangulo(3, 4);</span>
+<span class="fc" id="L13">        assertAll(</span>
+<span class="fc" id="L14">            () -&gt; assertEquals(12, r1.area()),</span>
+<span class="fc" id="L15">            () -&gt; assertEquals(14, r1.perimetro())</span>
+        );
+
+        // --- CASO 2: algún valor negativo ---
+<span class="fc" id="L19">        Rectangulo r2 = new Rectangulo(-3, 4);</span>
+<span class="fc" id="L20">        assertAll(</span>
+<span class="fc" id="L21">            () -&gt; assertEquals(-1, r2.area()),</span>
+<span class="fc" id="L22">            () -&gt; assertEquals(-1, r2.perimetro())</span>
+        );
+
+<span class="fc" id="L25">        Rectangulo r3 = new Rectangulo(3, -4);</span>
+<span class="fc" id="L26">        assertAll(</span>
+<span class="fc" id="L27">            () -&gt; assertEquals(-1, r3.area()),</span>
+<span class="fc" id="L28">            () -&gt; assertEquals(-1, r3.perimetro())</span>
+        );
+
+<span class="fc" id="L31">        Rectangulo r4 = new Rectangulo(-3, -4);</span>
+<span class="fc" id="L32">        assertAll(</span>
+<span class="fc" id="L33">            () -&gt; assertEquals(-1, r4.area()),</span>
+<span class="fc" id="L34">            () -&gt; assertEquals(-1, r4.perimetro())</span>
+        );
+
+        // --- CASO 3: algún valor cero ---
+<span class="fc" id="L38">        Rectangulo r5 = new Rectangulo(0, 4);</span>
+<span class="fc" id="L39">        assertAll(</span>
+<span class="fc" id="L40">            () -&gt; assertEquals(0, r5.area()),</span>
+<span class="fc" id="L41">            () -&gt; assertEquals(0, r5.perimetro())</span>
+        );
+
+<span class="fc" id="L44">        Rectangulo r6 = new Rectangulo(3, 0);</span>
+<span class="fc" id="L45">        assertAll(</span>
+<span class="fc" id="L46">            () -&gt; assertEquals(0, r6.area()),</span>
+<span class="fc" id="L47">            () -&gt; assertEquals(0, r6.perimetro())</span>
+        );
+
+<span class="fc" id="L50">        Rectangulo r7 = new Rectangulo(0, 0);</span>
+<span class="fc" id="L51">        assertAll(</span>
+<span class="fc" id="L52">            () -&gt; assertEquals(0, r7.area()),</span>
+<span class="fc" id="L53">            () -&gt; assertEquals(0, r7.perimetro())</span>
+        );
+
+        // --- 4. Aserciones erróneas para comprobar fallos ---
+        
+<span class="nc" id="L58">        assertAll(</span>
+<span class="pc" id="L59">            () -&gt; assertEquals(999, r1.area()),       </span>
+<span class="pc" id="L60">            () -&gt; assertEquals(-50, r1.perimetro())   </span>
+        );
+<span class="nc" id="L62">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span>RectanculoTest (29 abr 2026 19:11:53)</div></body></html>
